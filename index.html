@@ -8,44 +8,112 @@
 </head>
 <body>
     <header>
-        <img src="" alt="Logo">
-        <nav>
-            <ul id="nav-links">
-                <li class="nav-link"><a href="#home">Home</a></li>
-                <li class="nav-link"><a href="#about">About</a></li>
-                <li class="nav-link"><a href="#work">Work</a></li>
-                <li class="nav-link"><a href="#blog">Blog</a></li>
-                <li class="nav-link"><a href="#contact">Contact</a></li>
+        <a href="#home" class="header__logo">
+            <img src="./assets/img/tcr_logo_horizontal.png" alt="Logo" width="200" class="header__logo-img">
+        </a>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="#home" class="header__nav-link">Home</a></li>
+                <li class="header__nav-item"><a href="/about.html" target="_blank" class="header__nav-link">About</a></li>
+                <li class="header__nav-item"><a href="/work.html" target="_blank" class="header__nav-link">Work</a></li>
+                <li class="header__nav-item"><a href="/blog.html" target="_blank" class="header__nav-link">Blog</a></li>
+                <li class="header__nav-item"><a href="/contact.html" target="_blank" class="header__nav-link">Contact</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section id="home">
-
+        <section id="home" class="home">
+            <p class="home__intro">Hi, I'm Tiago</p>
+            <h1 class="home__title">Designer</h1>
+            <h1 class="home__title">Web Developer</h1>
+            <a href="/contact.html" target="_blank" class="btn home__btn">Get in touch</a>
         </section>
-        <section id="about">
-
+        <section id="about" class="about">
+            <h2 class="section-title about__section-title">Me?</h2>
+            <p class="about__intro">I'm here to jazz up your business with killer branding and an awesome website. <br>
+                From crafting standout logos to building kickass web spaces, <br>
+                I'm all about making you look amazing online.</p>
+            <a href="/about.html" target="_blank" class="btn about__btn">More about me</a>
         </section>
-        <section id="work">
+        <section id="work" class="work">
+            <h2 class="section-title work__section-title">Some of my work</h2>
+            <article class="card work__card">
+                <img src="" alt="" class="card-img work__card-img">
+                <h3 class="card-title work__card-title">Name of project</h3>
+                <h4 class="card-tag work__card-tag">Design</h4>
+                <ul class="card-list work__card-list">
+                    <li class="card-list--item work__card-list--item"><a href="" target="_blank" class="card-list--link work__card-list--link"><img src="./assets/img/github-mark.png" alt="github" class="card-list--img work__card-list--img"></a></li>
+                    <li class="card-list--item work__card-list--item"><a href="" target="_blank" class="card-list--link work__card-list--link"><img src="./assets/img/arrow-right.png" alt="live" class="card-list--img work__card-list--img"></a></li>
+                </ul>
+            </article>
 
+            <article class="card work__card">
+                <img src="" alt="" class="card-img work__card-img">
+                <h3 class="card-title work__card-title">Name of project</h3>
+                <h4 class="card-tag work__card-tag">Design</h4>
+                <ul class="card-list work__card-list">
+                    <li class="card-list--item work__card-list--item"><a href="" target="_blank" class="card-list--link work__card-list--link"><img src="./assets/img/github-mark.png" alt="github" class="card-list--img work__card-list--img"></a></li>
+                    <li class="card-list--item work__card-list--item"><a href="" target="_blank" class="card-list--link work__card-list--link"><img src="./assets/img/arrow-right.png" alt="live" class="card-list--img work__card-list--img"></a></li>
+                </ul>
+            </article>
+
+            <article class="card work__card">
+                <img src="" alt="" class="card-img work__card-img">
+                <h3 class="card-title work__card-title">Name of project</h3>
+                <h4 class="card-tag work__card-tag">Design</h4>
+                <ul class="card-list work__card-list">
+                    <li class="card-list--item work__card-list--item"><a href="" target="_blank" class="card-list--link work__card-list--link"><img src="./assets/img/github-mark.png" alt="github" class="card-list--img work__card-list--img"></a></li>
+                    <li class="card-list--item work__card-list--item"><a href="" target="_blank" class="card-list--link work__card-list--link"><img src="./assets/img/arrow-right.png" alt="live" class="card-list--img work__card-list--img"></a></li>
+                </ul>
+            </article>        
+
+            <a href="/work.html" target="_blank" class="btn work__btn">View more</a>
         </section>
-        <section id="blog">
 
+
+        <section id="blog" class="blog">
+            <h2 class="section-title blog__section-title">I also think I'm a writer...</h2>
+            <article class="card blog__card">
+                <img src="" alt="" class="card-img blog__card-img">
+                <h3 class="card-title blog__card-title">
+                    <a href="" target="_blank" class="card-link blog__card-link">Name of article</a>
+                </h3>
+                <h4 class="card-tag blog__card-tag">Design</h4>                
+            </article>
+            <article class="card blog__card">
+                <img src="" alt="" class="card-img blog__card-img">
+                <h3 class="card-title blog__card-title">
+                    <a href="" target="_blank" class="card-link blog__card-link">Name of article</a>
+                </h3>
+                <h4 class="card-tag blog__card-tag">Other</h4>                
+            </article>
+            <article class="card blog__card">
+                <img src="" alt="" class="card-img blog__card-img">
+                <h3 class="card-title blog__card-title">
+                    <a href="" target="_blank" class="card-link blog__card-link">Name of article</a>
+                </h3>
+                <h4 class="card-tag blog__card-tag">Web Development</h4>                
+            </article>
+            <a href="/blog.html" target="_blank" class="btn work__btn">View more</a>
         </section>
-        <section id="contact">
 
+
+        <section id="contact" class="contact">
+            <h2 class="section-title contact__section-title">Let's work together</h2>
+            <a href="mailto:tiago@tiagocr.me" class="contact__email">tiago@tiagocr.me</a>
+            <a href="/contact.html" target="_blank" class="btn contact__btn">Get in touch</a>
         </section>
     </main>
-    <footer>
-        <ul id="nav-links social-links">
-            <li class="social-link"><a href="">Github</a></li>
-            <li class="social-link"><a href="">Behance</a></li>
-            <li class="social-link"><a href="">LinkedIn</a></li>
+    <footer id="footer" class="footer">
+        <ul class="footer__socials-list">
+            <li class="footer__socials-list--item"><a href="https://github.com/tiagocostarebelo" target="_blank" class="footer__socials-list--link">GitHub</a></li>            
+            <li class="footer__socials-list--item"><a href="https://www.linkedin.com/in/tiagocostarebelo/" target="_blank" class="footer__socials-list--link">LinkedIn</a></li>
         </ul>
-        <ul id="nav-links terms-links">
-            <li class="terms-link"><a href="">Privacy Policy</a></li>
-            <li class="terms-link"><a href="">Terms & Conditions</a></li>
+        <ul class="footer__terms-list">
+            <li class="footer__terms-list--item"><a href="" target="_blank" class="footer__terms-list--item">Privacy Policy</a></li>
+            <li class="footer__terms-list--item"><a href="" target="_blank" class="footer__terms-list--item">Terms & Conditions</a></li>
         </ul>
     </footer>
+    <button class="btn top__btn">Back to top</button>
 </body>
 </html>
