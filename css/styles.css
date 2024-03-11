@@ -132,7 +132,7 @@ main {
       transition: left 200ms ease-in-out;
 
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 1024px) {
         left: 50%;
       }
     }
@@ -190,48 +190,36 @@ main {
 
       transition: all 200ms ease-in-out;
 
-      @media screen and (max-width: 1028px) {
+      @media screen and (max-width: 1024px) {
         top: 130vh;
         left: 50%;
         right: 0%;
         transform: translateX(-50%);
       }
-
     }
   }
 
   .work {
-    height: max-content;
-
-    padding-block: 2em;
-    max-width: 1500px;
-    margin: 0 auto;
-
+    padding-inline: 0;
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-
-    @media screen and (max-width: 425px) {
-      padding-inline: 20px;
-    }
-
-    .work__section-title {
-      text-align: left;
-      align-self: flex-start;
-    }
 
     .work__cards-layout {
-      margin-top: 2em;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 4em;
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fill, minmax(50%, auto));
+      
+      transition: all 200ms ease-out;
 
+      @media screen and (max-width: 768px) {
+        grid-template-columns: repeat(auto-fill, minmax(100%, auto));
+      }
 
       .work__card {
+        cursor: pointer;
         position: relative;
-        max-width: 700px;
-        background-color: aquamarine;
+        width: 100%;
 
         .work__card-img {
           width: 100%;
@@ -239,30 +227,25 @@ main {
         }
 
         .work__card-details {
-          display: grid;
-          opacity: 0;
-          grid-template-areas:
-            "title title"
-            "tag socials";
-          background-color: rgba(240, 248, 255, 0.342);
-          width: 100%;
           position: absolute;
+          top: 0;
           bottom: 0;
           left: 0;
-          padding: 10px 20px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 0.25em;
+          background-color: rgba(240, 248, 255, 0.342);
+          opacity: 0;
+          padding: 40px 20px;
           transition: opacity 400ms ease-in-out;
 
           @media screen and (max-width: 768px) {
             opacity: 1;
           }
 
-          @media screen and (max-width: 375px) {
-            grid-template-areas:
-            "title title"
-            "tag tag"
-            "socials socials";
-            row-gap: 0.25em;
-          }
 
           .work__card-details--title {
             font-size: var(--card-fs);
@@ -273,8 +256,7 @@ main {
           .work__card-details--tag {
             font-size: var(--card-tag-fs);
             font-weight: 500;
-            grid-area: tag;
-            align-self: flex-end;           
+            grid-area: tag;          
           }
 
           .work__card-details--list {
@@ -289,35 +271,35 @@ main {
             }
 
             .work__card-details--list---item {
-              width: clamp(16px, 2vw, 2rem);
+              width: clamp(22px, 2vw, 2rem);
               height: auto;
             }
           }
-
         }
-      }      
-
-      .work__card:nth-child(odd) {
-        align-self: flex-end;
-      }
+      } 
 
       .work__card:hover {
         .work__card-details {
           opacity: 1;
         }
-      }
-
-
-
-
-
-
-
-
-    }
-
-
+      }      
+    }   
   }
 
+  .blog {
+    height: max-content;
+    padding-block: 2em;
+    max-width: 1500px;
+    margin: 0 auto;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+
+    @media screen and (max-width: 425px) {
+      padding-inline: 20px;
+    }
+  }
 }
