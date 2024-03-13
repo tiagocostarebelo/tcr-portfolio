@@ -5,7 +5,7 @@
 
 :root {
   --secondary-fs: 0.875rem;
-  --paragraph-fs: clamp(1rem, 2vw, 1.25rem);
+  --paragraph-fs: clamp(0,85rem, 2vw, 1rem);
   --btn-fs: clamp(1.4rem, 2vw, 2rem);
   --intro-fs: clamp(1.25rem, 6vw, 3rem);
   --title-fs: clamp(2rem, 10vw, 5rem);
@@ -25,8 +25,12 @@ body {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-size: calc(15px + 0.390625vw);
-  ;
   font-weight: 200;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
 }
 
 .btn {
@@ -249,13 +253,13 @@ main {
 
           .work__card-details--title {
             font-size: var(--card-fs);
-            font-weight: 600;
+            font-weight: 500;
             grid-area: title;
           }
 
           .work__card-details--tag {
             font-size: var(--card-tag-fs);
-            font-weight: 500;
+            font-weight: 300;
             grid-area: tag;          
           }
 
@@ -301,5 +305,126 @@ main {
     @media screen and (max-width: 425px) {
       padding-inline: 20px;
     }
+
+    article:first-of-type {
+      margin-top: 2em;
+    }
+
+    .blog__article-card {
+      border-block: 1px solid black;
+      width: 100%;
+      padding-block: 1em;
+
+      .blog__article-card--title {
+        font-size: var(--card-fs);
+        font-weight: 500;
+      }
+
+      .blog__article-card--tag {
+        font-size: var(--card-tag-fs);
+        font-weight: 300;
+      }
+      
+    }
+
+    .blog__btn {
+      align-self: flex-end;
+      background-color: #eeeeee;
+      margin-top: 1em;
+      transition: all 200ms ease-in-out;
+
+      @media screen and (max-width: 425px) {
+        align-self: center;
+      }
+    }
+
+  }
+
+  .contact {
+    height: 30vh; /* Adjust height as needed */
+    padding: 2em;
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    background-color: var(--background-clr); /* Set the background color */
+    color: var(--main-clr); /* Set the text color */
+  
+    .contact__section-title {
+      font-size: var(--section__title-fs);
+    }
+  
+    .contact__email {
+      font-size: var(--paragraph-fs);
+      font-weight: 400;
+      text-decoration: none;
+      color: var(--main-clr); /* Set the text color */
+    }
+  
+    .contact__btn {
+      padding: 10px 20px;
+      background-color: var(--accent-clr); /* Set the button background color */
+      color: white; /* Set the button text color */
+      font-size: var(--btn-fs);
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: darken(var(--accent-clr), 10%); /* Darken the background color on hover */
+      }
+    }
   }
 }
+
+.footer {
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .footer__socials-list,
+  .footer__terms-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+  }
+
+  .footer__socials-list--item,
+  .footer__terms-list--item {
+    font-size: var(--secondary-fs);
+  }
+
+  .footer__socials-list--link,
+  .footer__terms-list--item {
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      /* color: var(--accent-clr);  */
+    }
+  }
+}
+
+.top__btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: clamp(0.8rem, 1vw, 1rem); 
+  padding: 5px 10px; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    /* background-color: darken(var(--accent-clr), 10%);  */
+  }
+}
+
