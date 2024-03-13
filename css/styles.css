@@ -6,7 +6,7 @@
 :root {
   --secondary-fs: 0.875rem;
   --paragraph-fs: clamp(0,85rem, 2vw, 1rem);
-  --btn-fs: clamp(1.4rem, 2vw, 2rem);
+  --btn-fs: clamp(0.8rem, 1vw, 1rem); 
   --intro-fs: clamp(1.25rem, 6vw, 3rem);
   --title-fs: clamp(2rem, 10vw, 5rem);
   --section__title-fs: clamp(2.5rem, 9vw, 3rem);
@@ -53,6 +53,7 @@ header {
   position: fixed;
   top: 20px;
   width: 100%;
+  z-index: 100;
 
 
   @media screen and (max-width: 425px) {
@@ -165,7 +166,7 @@ main {
       left: 0;
       right: 0;
       z-index: -10;
-      background-color: yellow;
+      /* background-color: yellow; */
     }
 
     .about__section-title {
@@ -175,7 +176,6 @@ main {
       @media screen and (max-width: 768px) {
         margin-top: -4em;
       }
-
     }
 
     .about__intro {
@@ -205,7 +205,6 @@ main {
 
   .work {
     padding-inline: 0;
-    position: relative;
     display: flex;
     flex-direction: column;
 
@@ -295,6 +294,7 @@ main {
     padding-block: 2em;
     max-width: 1500px;
     margin: 0 auto;
+    position: relative;
 
     display: flex;
     flex-direction: column;
@@ -350,11 +350,11 @@ main {
     justify-content: center;
     align-items: center;
     gap: 1em;
-    background-color: var(--background-clr); /* Set the background color */
     color: var(--main-clr); /* Set the text color */
   
     .contact__section-title {
       font-size: var(--section__title-fs);
+      align-self: flex-start;
     }
   
     .contact__email {
@@ -366,8 +366,8 @@ main {
   
     .contact__btn {
       padding: 10px 20px;
-      background-color: var(--accent-clr); /* Set the button background color */
-      color: white; /* Set the button text color */
+      background-color: #eeeeee;
+      color: black;
       font-size: var(--btn-fs);
       border: none;
       border-radius: 5px;
@@ -386,6 +386,12 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 200ms ease-out;
+
+  @media screen and (max-width: 425px) {
+    flex-direction: column;
+    gap: 0.5em;
+  }
 
   .footer__socials-list,
   .footer__terms-list {
@@ -414,9 +420,9 @@ main {
 
 .top__btn {
   position: fixed;
-  bottom: 20px;
+  bottom: 80px;
   right: 20px;
-  font-size: clamp(0.8rem, 1vw, 1rem); 
+  font-size: var(--btn-fs);
   padding: 5px 10px; 
   border: none;
   border-radius: 5px;
