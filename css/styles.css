@@ -35,8 +35,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn {
   cursor: pointer;
-  width: clamp(5em, 10vw, 10em);
-  height: clamp(5em, 10vw, 10em);
+  width: clamp(8em, 10vw, 10em);
+  height: clamp(8em, 10vw, 10em);
   border-radius: 50%;
   font-size: var(--btn-fs);
   font-weight: 400;
@@ -211,7 +211,8 @@ main {
     .work__cards-layout {
       display: grid;
       justify-content: center;
-      grid-template-columns: repeat(auto-fill, minmax(50%, auto));
+      grid-template-columns: repeat(auto-fill, minmax(40%, auto));
+      gap: 2em;
       
       transition: all 200ms ease-out;
 
@@ -237,12 +238,12 @@ main {
           width: 100%;
           display: flex;
           flex-direction: column;
-          align-items: center;
+          align-items: flex-start;
           justify-content: flex-end;
           gap: 0.25em;
           background-color: rgba(240, 248, 255, 0.342);
           opacity: 0;
-          padding: 40px 20px;
+          padding: 20px 20px;          
           transition: opacity 400ms ease-in-out;
 
           @media screen and (max-width: 768px) {
@@ -311,20 +312,46 @@ main {
     }
 
     .blog__article-card {
-      border-block: 1px solid black;
+      display: flex;
+      align-items: center; 
+      justify-content: space-between;
       width: 100%;
-      padding-block: 1em;
+      padding: 1em 0.5em;
+      border-block: 1px solid black;
 
       .blog__article-card--title {
+        font-family: 'Roboto', sans-serif;
         font-size: var(--card-fs);
-        font-weight: 500;
+        font-weight: 600;
+        align-self: flex-start;
       }
 
       .blog__article-card--tag {
         font-size: var(--card-tag-fs);
-        font-weight: 300;
+        font-weight: 400;
+        align-self: center;
+      }
+
+      .blog__article-card--date {
+        font-size: var(--card-tag-fs);
+        font-weight: 200;
+        align-self: flex-end;
       }
       
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        row-gap: 1em;
+
+        .blog__article-card--title,
+        .blog__article-card--tag,
+        .blog__article-card--date {
+          align-self: center;
+        }
+      }
+    }
+
+    .blog__article-card:hover {
+      background-color: #eeeeee;
     }
 
     .blog__btn {
@@ -341,7 +368,7 @@ main {
   }
 
   .contact {
-    height: 30vh; /* Adjust height as needed */
+    height: max-content;
     padding: 2em;
     max-width: 1500px;
     margin: 0 auto;
@@ -350,7 +377,7 @@ main {
     justify-content: center;
     align-items: center;
     gap: 1em;
-    color: var(--main-clr); /* Set the text color */
+    color: var(--main-clr); 
   
     .contact__section-title {
       font-size: var(--section__title-fs);
@@ -358,27 +385,25 @@ main {
     }
   
     .contact__email {
+      margin-block: 2em;
       font-size: var(--paragraph-fs);
       font-weight: 400;
       text-decoration: none;
       color: var(--main-clr); /* Set the text color */
-    }
-  
+    }  
+    
     .contact__btn {
-      padding: 10px 20px;
+      align-self: center;
       background-color: #eeeeee;
-      color: black;
-      font-size: var(--btn-fs);
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-  
-      &:hover {
-        background-color: darken(var(--accent-clr), 10%); /* Darken the background color on hover */
+      margin-top: 1em;
+      transition: all 200ms ease-in-out;
+
+      @media screen and (max-width: 425px) {
+        align-self: center;
       }
     }
   }
+
 }
 
 .footer {
@@ -421,16 +446,27 @@ main {
 .top__btn {
   position: fixed;
   bottom: 80px;
-  right: 20px;
+  right: 22px;
   font-size: var(--btn-fs);
+  width: clamp(20px, 5em, 5em);
+  height:  clamp(20px, 5em, 5em);
+  transform: rotate(45deg);
   padding: 5px 10px; 
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 
+  span {
+    transform: rotate(-45deg);
+  }
+
   &:hover {
     /* background-color: darken(var(--accent-clr), 10%);  */
+  }
+
+  @media screen and (max-width: 768px) {
+    visibility: hidden;
   }
 }
 
